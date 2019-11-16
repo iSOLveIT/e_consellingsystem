@@ -1,0 +1,161 @@
+
+nav.navbar{
+    background-color:#fdf3e9;
+    padding: 50px 50px; 
+    
+    position: sticky;
+    /*Animation*/
+     -webkit-transition: all 0.4s ease;
+     transition: all 0.4s ease;
+  }
+
+/*Navbar shrink*/
+nav.navbar.shrink {
+    padding: 20px 50px;
+    box-shadow: 2px 2px 7px rgba(172, 171, 171, 0.603);
+  }
+/*Image spacing in navbar*/
+@media (min-width: 1024px){
+  .navbar-brand{
+    padding: 0 100px;
+  }
+  
+}
+/*service head*/
+.service{
+  height: max-content;
+  padding: 30px 250px;
+  text-align: center;
+  
+  }
+
+/*dept_head on small screen*/
+@media (max-width: 1024px){
+  .service{
+    padding: 30px 0px;
+    } 
+
+  .service_sub{
+    display:inline-block;
+    position: relative;
+    vertical-align: top;
+    box-sizing: border-box;
+  }
+  /*carousel img*/
+  .slide_img{
+    height: 300px;
+  }
+  
+}
+
+
+/*dept head*/
+.dept_head{
+  background: #fdf3e9;
+  height: 500px;
+  padding: 0px 100px;
+}
+.dept_text{
+  padding-top:150px;
+}
+.dept_text > h3{
+  font-weight: unset; font-size: 50pt;
+}
+/*dept_head on small screen*/
+@media (max-width: 1024px){
+  .dept_head{
+    height: max-content;
+    padding: 0px 0px;
+    text-align: center;
+  }
+  .dept_sub{
+    display:inline-block;
+    position: relative;
+    vertical-align: top;
+    box-sizing: border-box;
+  }
+  
+  .dept_text{
+    padding:20px 0px;
+    margin: auto;
+    text-align: left;
+  }
+  .dept_text > h3{
+    font-weight: 600;
+    font-size:18pt; 
+  }
+  
+  .dept_img{
+    width: inherit;
+  }
+}
+
+.help_head{
+  height: max-content;
+  text-align: center;
+  padding-top: 100px;
+  
+}
+.help_title{
+  font-weight: unset; font-size: 36pt;
+}
+@media (max-width:1024px){
+  .help_title{
+    font-weight: bold; font-size: 20pt;
+  }
+  .card{
+    display: inline-block;
+  }
+  
+  .card-text{
+    box-sizing: border-box;
+    width:320px;
+    
+  }
+  
+}
+
+/*help carousel*/
+.help_service .number {
+    position: absolute;
+    top: 50px;
+    left: -30px;
+    line-height: 0;
+    z-index: -1;
+    font-size: 10rem;
+    color: whitesmoke;
+    font-weight: 900; }
+.help_service h3 {
+    font-size: 1.0rem;
+    color: #000;
+    font-weight: 700;
+    margin-bottom: 1.5rem; }
+
+.help_service {
+  position: relative;
+  padding: 2rem;
+  background: #fff; }
+  @media (max-width: 991.98px) {
+    .help_service {
+      padding: 2rem; } }
+
+      .nonloop-block-14 .owl-nav {
+        display: none; }
+      
+      .nonloop-block-14 .owl-dots {
+        margin-top: 30px;
+        width: 100%;
+        text-align: center; }
+        .nonloop-block-14 .owl-dots .owl-dot {
+          display: inline-block;
+          margin: 5px; }
+          .nonloop-block-14 .owl-dots .owl-dot span {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #e6e6e6; }
+          .nonloop-block-14 .owl-dots .owl-dot.active span {
+            background-color: #000033;; }
+/*end help carousel*/   
+      
