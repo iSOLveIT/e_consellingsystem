@@ -392,5 +392,78 @@ img.navbar_img{
 
 
 
+.hero-wrap {
+  background-image: url(http://cloe-brooks.themerex.net/wp-content/uploads/revslider/home-1/slide1.jpg);
+  width: 100%;
+  height: 100%;
+  position: inherit;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative; }
+  .hero-wrap .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    opacity: .75;
+    background: #000; }
+  .hero-wrap.hero-wrap-2 {
+    height: 150px; }
+    .hero-wrap.hero-wrap-2 .slider-text {
+      height: 150px; }
+      .hero-wrap.hero-wrap-2 .slider-text .bread {
+        font-weight: 900;
+        color: #fff; }
+      .hero-wrap.hero-wrap-2 .slider-text .breadcrumbs {
+        text-transform: uppercase;
+        font-size: 13px;
+        letter-spacing: 1px; }
+        .hero-wrap.hero-wrap-2 .slider-text .breadcrumbs span {
+          color: #fff;
+          border-bottom: 2px solid #ffffff1a; }
+          .hero-wrap.hero-wrap-2 .slider-text .breadcrumbs span a {
+            color: #fff; }
 
+.login_head{
+  height:470px;
+  text-align: center;
+  
+}
+.login_sub{
+  margin: auto;
+  box-shadow: 2px 1px 10px #000;
+  margin-top:30px;
+  box-sizing: border-box;
+  width:550px;
+  position: relative;
+}
 
+@media (max-width: 1024px){
+  .login_head{
+    height:500px;
+    text-align: center;
+    
+  }
+  .login_sub{
+    margin: auto;
+    box-shadow: 2px 1px 10px #000;
+    margin-top:20px;
+    box-sizing: border-box;
+    width:inherit;
+    position: relative;
+  }
+  .section-title{
+    font-size: 30pt;
+    text-align: center;
+  }
+  
+}
+
+/* *{
+  background: #000 !important;
+  color: #0f0 !important;
+  outline: solid #f00 1px !important;
+}*/
