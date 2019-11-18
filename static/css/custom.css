@@ -391,7 +391,7 @@ img.navbar_img{
 }
 
 
-
+/*Bread Crumb Section*/
 .hero-wrap {
   background-image: url(http://cloe-brooks.themerex.net/wp-content/uploads/revslider/home-1/slide1.jpg);
   width: 100%;
@@ -427,6 +427,8 @@ img.navbar_img{
           .hero-wrap.hero-wrap-2 .slider-text .breadcrumbs span a {
             color: #fff; }
 
+
+/*Login Section*/
 .login_head{
   height:470px;
   text-align: center;
@@ -459,9 +461,84 @@ img.navbar_img{
     font-size: 30pt;
     text-align: center;
   }
+}
+
+/*staff head*/
+.staff_head{
+  background: #e2f0f4;
+  height: max-content;
+  padding: 50px 100px;
+}
+
+
+/*staff_head on small screen*/
+@media (max-width: 1024px){
+  .staff_head{
+    height: max-content;
+    text-align: center;
+    padding: 0 0;
+  }
+  .staff_sub{
+    display:inline-block;
+    position: relative;
+    vertical-align: top;
+    box-sizing: border-box;
+  }
   
 }
 
+/*contact*/
+.contact_head{
+  background: #fdf3e9;
+  height: max-content;
+  padding: 50px 200px;
+  text-align: center;
+}
+
+
+/*contact on small screen*/
+@media (max-width: 1024px){
+  .contact_head{
+    height: max-content;
+    text-align: center;
+    padding: 0 0;
+  }
+  .contact_sub{
+    display:inline-block;
+    position: relative;
+    vertical-align: top;
+    box-sizing: border-box;
+  }
+  
+}
+
+.contact_imgs{
+  background-color: #fff;
+  height: 300px;
+  text-align: center;
+  padding-top: 100px;
+  
+}
+@media (max-width:1024px){
+  .contact_imgs{
+    background-color: #fff;
+    height: max-content;
+    text-align: center;
+    padding-top: 80px;
+
+  }
+  .contact_img_sub{
+    display:inline-block;
+    position: relative;
+    vertical-align: top;
+    box-sizing: border-box;
+  }
+  .contact_img_sub *{
+    padding-bottom: 20px;
+  }
+}
+
+/*CSS for correction*/
 /* *{
   background: #000 !important;
   color: #0f0 !important;
