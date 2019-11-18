@@ -1,4 +1,18 @@
+/*
+--- Author : Duodu Randy
+--- Created On: 11th November, 2019
+*/
+/*Initial*/
+html,body
+{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+}
 
+
+/*Navbar & Navbar-brand shrink*/
 nav.navbar{
     background-color:#fdf3e9;
     padding: 50px 50px; 
@@ -9,11 +23,34 @@ nav.navbar{
      transition: all 0.4s ease;
   }
 
-/*Navbar shrink*/
 nav.navbar.shrink {
     padding: 20px 50px;
-    box-shadow: 2px 2px 7px rgba(172, 171, 171, 0.603);
+    box-shadow: 2px 2px 7px #acabab9a;
   }
+.navbar-brand > img.shrink_img{
+  width: 200px;
+  height: auto;
+}
+img.navbar_img{
+  width:350px; height:auto;
+}
+
+/*navbar on small screen*/
+@media (max-width: 1024px){
+  /*navbar-brand img*/
+  img.navbar_img, .navbar-brand > img.shrink_img{
+    width:150px;
+    height: auto;
+  }
+  nav.navbar{
+    padding: 30px 30px; 
+  }
+  nav.navbar.shrink{
+    padding: 30px 30px; 
+
+  }
+  
+}
 /*Image spacing in navbar*/
 @media (min-width: 1024px){
   .navbar-brand{
@@ -21,6 +58,7 @@ nav.navbar.shrink {
   }
   
 }
+
 /*service head*/
 .service{
   height: max-content;
@@ -29,10 +67,10 @@ nav.navbar.shrink {
   
   }
 
-/*dept_head on small screen*/
+/*service_head on small screen*/
 @media (max-width: 1024px){
   .service{
-    padding: 30px 0px;
+    padding: 30px 0;
     } 
 
   .service_sub{
@@ -41,10 +79,7 @@ nav.navbar.shrink {
     vertical-align: top;
     box-sizing: border-box;
   }
-  /*carousel img*/
-  .slide_img{
-    height: 300px;
-  }
+ 
   
 }
 
@@ -52,11 +87,11 @@ nav.navbar.shrink {
 /*dept head*/
 .dept_head{
   background: #fdf3e9;
-  height: 500px;
-  padding: 0px 100px;
+  height: 550px;
+  padding: 0 100px;
 }
 .dept_text{
-  padding-top:150px;
+  padding-top:50px;
 }
 .dept_text > h3{
   font-weight: unset; font-size: 50pt;
@@ -65,8 +100,8 @@ nav.navbar.shrink {
 @media (max-width: 1024px){
   .dept_head{
     height: max-content;
-    padding: 0px 0px;
     text-align: center;
+    padding: 0 0;
   }
   .dept_sub{
     display:inline-block;
@@ -76,7 +111,7 @@ nav.navbar.shrink {
   }
   
   .dept_text{
-    padding:20px 0px;
+    padding:20px 0;
     margin: auto;
     text-align: left;
   }
@@ -87,9 +122,10 @@ nav.navbar.shrink {
   
   .dept_img{
     width: inherit;
+    height: 300px;
   }
 }
-
+/*help section*/
 .help_head{
   height: max-content;
   text-align: center;
@@ -102,15 +138,6 @@ nav.navbar.shrink {
 @media (max-width:1024px){
   .help_title{
     font-weight: bold; font-size: 20pt;
-  }
-  .card{
-    display: inline-block;
-  }
-  
-  .card-text{
-    box-sizing: border-box;
-    width:320px;
-    
   }
   
 }
@@ -135,27 +162,233 @@ nav.navbar.shrink {
   position: relative;
   padding: 2rem;
   background: #fff; }
-  @media (max-width: 991.98px) {
-    .help_service {
-      padding: 2rem; } }
+@media (max-width: 991.98px) {
+  .help_service {
+    padding: 2rem; } }
 
-      .nonloop-block-14 .owl-nav {
-        display: none; }
-      
-      .nonloop-block-14 .owl-dots {
-        margin-top: 30px;
-        width: 100%;
-        text-align: center; }
-        .nonloop-block-14 .owl-dots .owl-dot {
-          display: inline-block;
-          margin: 5px; }
-          .nonloop-block-14 .owl-dots .owl-dot span {
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: #e6e6e6; }
-          .nonloop-block-14 .owl-dots .owl-dot.active span {
-            background-color: #000033;; }
+.nonloop-block-14 .owl-nav {
+  display: none; }
+
+.nonloop-block-14 .owl-dots {
+  margin-top: 30px;
+  width: 100%;
+  text-align: center; }
+.nonloop-block-14 .owl-dots .owl-dot {
+  display: inline-block;
+  margin: 5px; }
+.nonloop-block-14 .owl-dots .owl-dot span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #e6e6e6; }
+.nonloop-block-14 .owl-dots .owl-dot.active span {
+  background-color: #72b5ca;; }
 /*end help carousel*/   
-      
+
+/*testimonial section*/
+.testimonial_head{
+  background: #e2f0f4;
+  height: max-content;
+  margin-top: 50px;
+  text-align: center;
+  padding-top: 60px;
+}
+
+
+.testimonial_service {
+  box-sizing: border-box;
+  width: 400px;
+  position: relative;
+  padding:40px 0;
+  margin: auto;
+   }
+
+.testimonial_sub{
+  position: relative;
+}   
+@media (max-width: 991.98px) {
+  .testimonial_service {
+    padding: 2rem;
+    width: inherit;
+  } 
+  .testimonial_sub{
+    position: relative;
+  } 
+}
+
+.nonloop-block-13 .owl-nav {
+  display: none; }
+
+.nonloop-block-13 .owl-dots {
+  margin-top: 30px;
+  width: 100%;
+  text-align: center; }
+.nonloop-block-13 .owl-dots .owl-dot {
+  display: inline-block;
+  margin: 5px; }
+.nonloop-block-13 .owl-dots .owl-dot span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #e6e6e6; }
+.nonloop-block-13 .owl-dots .owl-dot.active span {
+  background-color: #72b5ca;; }
+
+
+/*Daily Messages */
+.daily_head{
+  background-image: url(http://cloe-brooks.themerex.net/wp-content/uploads/revslider/home-1/slide1.jpg);
+  height:300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  text-align: center;
+  padding: 100px 0;
+}            
+
+
+.msg_column{
+  margin: auto;  
+  width:500px;
+}
+@media (max-width: 1024px){
+  .daily_head{
+    display:inline-block;
+    position: relative;
+    vertical-align: top;
+    box-sizing: border-box;
+  }
+  .msg_column{
+    margin: auto;  
+    width:inherit;
+    padding: 0 5px;
+  }
+}
+/*footer section*/
+.footer_head{
+  height:500px;
+  text-align: center;
+  background-color: #fdf3e9;
+}
+.footer_content{
+  margin: auto;
+  display: inline-block;
+  padding:100px 0;
+}
+.footer_img{
+  width:inherit;
+}
+.detail{
+  padding: 30px 0;
+  text-align: center;
+}
+
+.designer{
+  text-align: center;
+  height: 80px;
+  background: #343a40;
+}
+.design_sub{
+  padding-top: 30px;
+}
+
+@media (max-width: 1024px){
+  .footer_head{
+    width: inherit;
+    height:500px;
+    text-align: center;
+    background-color: #fdf3e9;
+    
+  }
+  .footer_content{
+    width: inherit;
+    margin: auto;
+    display: inline-block;
+    padding:100px 0;
+  }
+  .footer_img{
+    width:200px;
+  }
+  .detail{
+    padding: 30px 0;
+    text-align: center;
+  }
+  
+  .designer{
+    text-align: center;
+    width: inherit;
+    height: 80px;
+    background: #343a40;
+  }
+  .design_sub{
+    padding-top: 10px;
+  }
+}
+
+
+
+/* Carousel Header Text Styles */
+.header-text {
+  position: absolute;
+  top: 20%;
+  left: 1.8%;
+  right: auto;
+  width: 96.66666666666666%;
+  color: #fff;
+}
+
+.header-text h1 {
+  font-size: 65px;
+  font-weight: 300;
+}
+
+.header-text h5 {
+  font-size: 28px;
+}
+.header-text h1 span {
+  line-height: 80px;
+  padding: 0;
+}
+
+.header-text h5 span {
+  line-height: 80px;
+  padding: 0;
+}
+
+@media (max-width: 1024px){
+  .header-text {
+    position: absolute;
+    top: 20%;
+    left: 1.8%;
+    right: auto;
+    width: inherit;
+    color: #fff;
+  }
+  
+  .header-text h1 {
+    font-size: 24pt;
+    font-weight: 400;
+  }
+  
+  .header-text h5 {
+    font-weight: 300;
+    font-size: 12pt;
+  }
+  .header-text h1 span {
+    line-height: 10px;
+    padding: 0;
+  }
+  
+  .header-text h5 span {
+    line-height: 20px;
+    padding: 0;
+  }
+  /*carousel img*/
+  .slide_img{
+    height: 350px;
+  }
+  
+}
+
