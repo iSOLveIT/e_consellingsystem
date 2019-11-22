@@ -29,9 +29,16 @@ nav.navbar.shrink {
 .navbar-brand > img.shrink_img{
   width: 200px;
   height: auto;
+  transition: all linear;
 }
 img.navbar_img{
   width:350px; height:auto;
+}
+.dash_img{
+  width:300px;
+}
+.edit_profile{
+  display: none;
 }
 
 /*navbar on small screen*/
@@ -40,22 +47,38 @@ img.navbar_img{
   img.navbar_img, .navbar-brand > img.shrink_img{
     width:150px;
     height: auto;
+    transition: all linear;
   }
   nav.navbar{
     padding: 30px 30px; 
   }
   nav.navbar.shrink{
     padding: 30px 30px; 
-
   }
-  
+
+  img.dash_img, .navbar-brand > img.shrink_img{
+    width:150px;
+    height: auto;
+    transition: all linear;
+  }
+
+  .my_account{
+    display: none;
+  }
+
+  .edit_profile{
+    display: block;
+  }
 }
 /*Image spacing in navbar*/
 @media (min-width: 1024px){
   .navbar-brand{
-    padding: 0 100px;
+    padding: 0 80px;
   }
-  
+
+  .dash_brand{
+    padding-right:150px;
+  }  
 }
 
 /*service head*/
@@ -77,9 +100,7 @@ img.navbar_img{
     position: relative;
     vertical-align: top;
     box-sizing: border-box;
-  }
- 
-  
+  } 
 }
 
 
@@ -123,6 +144,7 @@ img.navbar_img{
     width: inherit;
     height: 300px;
   }
+  .mb-5{text-align: left;}
 }
 /*help section*/
 .help_head{
