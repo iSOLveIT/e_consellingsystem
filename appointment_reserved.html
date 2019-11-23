@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="static/css/icomoon.css">
   <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
 
-  <title>Dashboard</title>
+  <title>Appointment Reserved</title>
 </head>
 
 <body style="font-family: 'PT Serif',serif">
@@ -105,73 +105,120 @@
     <div class="container">
       <div class="row no-gutters slider-text align-items-center justify-content-center">
         <div class="col-md-9 ftco-animate text-center">
-          <h1 class="mb-2 bread" style="text-shadow: 2px 2px 7px #000000;">Dashboard</h1>
+          <h1 class="mb-2 bread" style="text-shadow: 2px 2px 7px #000000;">Appointment Reserved</h1>
           <p class="breadcrumbs" style="text-shadow: 2px 2px 7px #000000;"><span class="mr-2"><a href="#">Home
-                &rightarrow; </a></span> <span style="color: #cccccc;">Dashboard</span></p>
+                &rightarrow; </a></span> <span style="color: #cccccc;">Appointment Reserved</span></p>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="dept_head" style="background-color: #fff; ">
+  <!--About Head of Unit-->
+  <div class="dept_head"
+    style="background-color: #e2f0f4; padding-top: 30px; padding-bottom: 30px;height: max-content;">
+    <h3 style="color: #0a66a3;">Here is the list of Booked Appointment active</h3>
+    <br>
     <div class="container">
-      <div class="row dept_sub">
-        <div class="col-lg-5 mr-auto"
-          style="background-color: #edb39b; padding-top: 10px;padding-bottom: 10px; height: max-content;">
-          <h1 style="font-size: 65pt;">Hi Randy!</h1>
-          <p class="mb-5" style="font-size:17pt;">
-            Welcome to the Counselling Unit, We're super excited to have you on board.
-          </p>
+      <!--ROW 1-->
+      <div class="row" style="padding-bottom: 20px;">
+        <div class="col" style="padding-bottom: 20px;">
+          <div class="card reserve">
+            <div class="card-body card-header">
+              <h5 class="card-title">Appointment</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><b>Appointment Tag:</b> <span class="reserve_item"
+                  style="margin-left:8.7rem;">aptag1000</span>
+              </li>
+              <li class="list-group-item"><b>Date:</b> <span class="reserve_item" style="margin-left:15rem;">September
+                  15, 2019</span></li>
+              <li class="list-group-item"><b>Time:</b> <span class="reserve_item"
+                  style="margin-left:15rem;">10:00am</span></li>
+              <li class="list-group-item"><b>Type of Appointment:</b> <span class="reserve_item"
+                  style="margin-left:7rem;">Academic/Career</span></li>
+              <li class="list-group-item"><b>Appointment Status:</b> <span class="reserve_item"
+                  style="margin-left:7.7rem;">Unassigned</span>
+              </li>
+
+            </ul>
+            <div class="card-body">
+              <a href="#" class="card-link btn btn-danger">&times; CANCEL</a>
+              <a href="#" class="card-link btn btn-success">&#9998; MODIFY</a>
+            </div>
+          </div>
         </div>
-        <div class="col" style="padding: 10px 30px; ">
+        <div class="col">
+          <div class="card reserve">
+            <div class="card-body card-header">
+              <h5 class="card-title">Appointment</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><b>Appointment Tag:</b> <span style="margin-left:8.7rem;">aptag1010</span>
+              </li>
+              <li class="list-group-item"><b>Date:</b> <span style="margin-left:15rem;">November 22, 2019</span></li>
+              <li class="list-group-item"><b>Time:</b> <span style="margin-left:15rem;">10:00am</span></li>
+              <li class="list-group-item"><b>Type of Appointment:</b> <span style="margin-left:7rem;">Financial</span>
+              </li>
+              <li class="list-group-item"><b>Appointment Status:</b> <span style="margin-left:7.7rem;">Assigned</span>
+              </li>
 
-          <h1 class="section-title mb-3" style="padding-top: 20px; text-align: center;">Book Appointment</h1>
-          <p style="font-weight: bolder; font-size: 30pt; color: #f90; text-align: center;">&mdash;</p>
-
-          <form action="#" method="POST" class='contact_form' data-aos="fade" style="padding-bottom: 60px;">
-            <div class="form-group row">
-              <div class="col-md-12">
-                <label for="selectInput" style="font-size: large; font-weight: bold;">Type of Issue</label>
-                <select class="form-control" name="issue"
-                  style="border-radius: 1.66em; box-sizing: border-box; height: 60px;" id="selectInput" required>
-                  <option value="Academic/Career">Academic/Career</option>
-                  <option value="Personal-Social">Personal/Social</option>
-                  <option value="Financial">Financial</option>
-                  <option value="Health">Health</option>
-                  <option value="Others">Others</option>
-                </select>
-              </div>
+            </ul>
+            <div class="card-body">
+              <a href="#" class="card-link btn btn-danger">&times; CANCEL</a>
+              <a href="#" class="card-link btn btn-success">&#9998; MODIFY</a>
             </div>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="dateInput" style="font-size: large; font-weight: bold;">Appointment Date</label>
-                <input type="date" class="form-control" name="inputDate" min="2019-11-26" step="2"
-                  style="border-radius: 1.66em; box-sizing: border-box; height: 60px;" id="dateInput" required>
-              </div>
-              <div class="form-group col-md-6">
-                <label for="timeInput" style="font-size: large; font-weight: bold;">Appointment Time</label>
-                <input type="time" class="form-control" name="inputTime" step="7200"
-                  style="border-radius: 1.66em; box-sizing: border-box; height: 60px;" id="timeInput" required>
-              </div>
-            </div>
-            <div class="form-group">
-              <small id="emailHelp" class="form-text text-muted">We work from Mondays to Fridays and opening hours are
-                from 7:00AM-9:00PM.</small>
-            </div>
-            <div class="form-group">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck" required>
-                <label class="form-check-label" for="gridCheck">
-                  I agree that my submitted data is being collected and stored
-                </label>
-              </div>
-            </div>
-            <button type="submit" class="btn bg-info py-3 px-5"
-              style="color:#ffffff;border-radius: 1.66em; padding: 1em 1em;background-color: #72b5ca;">Book
-              Appointment</button>
-          </form>
+          </div>
         </div>
       </div>
+
+      <!--ROW 2-->
+      <div class="row">
+        <div class="col " style="padding-bottom: 20px;">
+          <div class="card reserve">
+            <div class="card-body card-header">
+              <h5 class="card-title">Appointment</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><b>Appointment Tag:</b> <span style="margin-left:8.7rem;">aptag1000</span>
+              </li>
+              <li class="list-group-item"><b>Date:</b> <span style="margin-left:15rem;">September 15, 2019</span></li>
+              <li class="list-group-item"><b>Time:</b> <span style="margin-left:15rem;">10:00am</span></li>
+              <li class="list-group-item"><b>Type of Appointment:</b> <span
+                  style="margin-left:7rem;">Academic/Career</span></li>
+              <li class="list-group-item"><b>Appointment Status:</b> <span style="margin-left:7.7rem;">Unassigned</span>
+              </li>
+
+            </ul>
+            <div class="card-body">
+              <a href="#" class="card-link btn btn-danger">&times; CANCEL</a>
+              <a href="#" class="card-link btn btn-success">&#9998; MODIFY</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card reserve ">
+            <div class="card-body card-header">
+              <h5 class="card-title">Appointment</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><b>Appointment Tag:</b> <span style="margin-left:8.7rem;">aptag1010</span>
+              </li>
+              <li class="list-group-item"><b>Date:</b> <span style="margin-left:15rem;">November 22, 2019</span></li>
+              <li class="list-group-item"><b>Time:</b> <span style="margin-left:15rem;">10:00am</span></li>
+              <li class="list-group-item"><b>Type of Appointment:</b> <span style="margin-left:7rem;">Financial</span>
+              </li>
+              <li class="list-group-item"><b>Appointment Status:</b> <span style="margin-left:7.7rem;">Assigned</span>
+              </li>
+
+            </ul>
+            <div class="card-body">
+              <a href="#" class="card-link btn btn-danger">&times; CANCEL</a>
+              <a href="#" class="card-link btn btn-success">&#9998; MODIFY</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 

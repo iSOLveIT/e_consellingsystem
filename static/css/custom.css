@@ -452,7 +452,7 @@ img.navbar_img{
 
 /*Login Section*/
 .login_head{
-  height:470px;
+  height:max-content;
   text-align: center;
   
 }
@@ -467,7 +467,7 @@ img.navbar_img{
 
 @media (max-width: 1024px){
   .login_head{
-    height:500px;
+    height:max-content;
     text-align: center;
     
   }
@@ -557,6 +557,28 @@ img.navbar_img{
   }
   .contact_img_sub *{
     padding-bottom: 20px;
+  }
+}
+
+/*Appointment reserved*/
+.reserve{
+  width: 30rem;
+}
+
+@media (max-width: 1024px){
+  .reserve{
+    width:inherit;
+    text-align: left;
+  }
+
+  .list-group-item span{
+    margin-left: 0rem !important;
+    display: block;
+  }
+}
+@media (max-width:1024px){
+  .profile{
+    text-align: left;
   }
 }
 

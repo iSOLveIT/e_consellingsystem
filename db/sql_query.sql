@@ -11,10 +11,11 @@ CREATE TABLE IF NOT EXISTS `appointment` (
   `appointment_tag` varchar(10) NOT NULL,
   `appointment_date` date NOT NULL,
   `appointment_time` time NOT NULL,
+  `recommendation` text,
   `assigned` varchar(1) DEFAULT '0',
   `assigned_admin_id` varchar(10),
   PRIMARY KEY (`id`), 
-  foreign key(`assigned_admin_id`) references admin_profile(`admin_id`)
+  foreign key(`assigned_admin_id`) references admin_profile(`admin_id`),
 );
 
 INSERT INTO `appointment` (`user_id`, `problem`, `appointment_tag`, `appointment_date`, `appointment_time`, `assigned`) VALUES
@@ -109,16 +110,15 @@ CREATE TABLE IF NOT EXISTS `recommendations` (
   `recommend_id` int(11) NOT NULL AUTO_INCREMENT,
   `admin_id` varchar(10) NOT NULL,
   `name_of_counsellor` varchar(255) NOT NULL,
-  `problem` text NOT NULL,
-  `solution` text NOT NULL,
+  `solution` text,
   `appointment_tag` varchar(10) NOT NULL,
-  `appointment_date` date NOT NULL,
-  `appointment_time` time NOT NULL,
+  `recommendation_date` date NOT NULL,
+  `recommendation_time` time NOT NULL,
   PRIMARY KEY (`recommend_id`),
-  foreign key(`admin_id`) references admin_profile(`admin_id`)
+  foreign key(`admin_id`) references admin_profile(`admin_id`),
 );
 
-INSERT INTO `recommendations` (`admin_id`,`name_of_counsellor`, `problem`, `solution`,`appointment_tag`, `appointment_date`, `appointment_time`) VALUES
-('admin1','Daniel Appiah', 'Marital Issues','Note to help you.','aptag1000','2018-07-23','14:09:14'),
-('admin2','Samuel Mensah', 'Marital Issues','Note to help you.','aptag1008','2018-07-23','14:09:14'),
-('admin5','Joseph Sefah', 'Relationship Issues','Note to help you.','aptag1010','2018-07-23','14:09:14');
+INSERT INTO `recommendations` (`admin_id`,`name_of_counsellor`, `solution`,`appointment_tag`, `recommendation_date`, `recommendation_time`) VALUES
+('admin1','Daniel Appiah', 'Note to help you.','aptag1000','2018-07-23','14:09:14'),
+('admin2','Samuel Mensah', 'Note to help you.','aptag1008','2018-07-23','14:09:14'),
+('admin5','Joseph Sefah', 'Note to help you.','aptag1010','2018-07-23','14:09:14');
