@@ -2,7 +2,7 @@
     <!--Navbar-->
     <nav class="navbar sticky-top navbar-expand-lg navbar-light">
       <a class="navbar-brand dash_brand" href="/">
-        <img src="{{ url_for('static', filename='navlogo.png') }}" class="dash_img" alt="">
+        <img src="{{ url_for('static', filename='upsa_logo.png') }}" class="dash_img" alt="">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,7 +46,7 @@
               Settings
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="./change_password.html" style="text-transform: uppercase;">Change
+              <a class="dropdown-item" href="/setting/change_password" style="text-transform: uppercase;">Change
                 Password</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="/logout" style="text-transform: uppercase;">Logout</a>
@@ -61,7 +61,7 @@
                   <a href="./edit_profile.html" style="color:#000033">edit profile</a>
                 </div>
                 <div class="col-4" style="position: relative; top: -17px;">
-                  <img src="./static/isolveit.jpg" alt="" width="45px" height="45px"
+                  <img src="{{ url_for('static', filename='avatar.png') }}" alt="" width="45px" height="45px"
                     style="border-radius:50%; border: solid medium #000033;">
                 </div>
               </div>

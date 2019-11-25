@@ -1,9 +1,10 @@
 <!-- This template was created to prompt Users if they made as they filled the forms -->
 {% macro render_field(field) %}
+    
     {{ field(**kwargs)|safe }}
     {% if field.errors %}
         {% for error in field.errors %}
-        <span class="help-inline">{{ error }}</span>            <!--This will display the error found-->
+            <div style="color: #ad0000; padding-top: 10px;;">{{ error }}</div>             
         {% endfor %}
     {% endif%}
 {% endmacro %}

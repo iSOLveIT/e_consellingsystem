@@ -76,3 +76,15 @@ INSERT INTO `user` (`user_id`, `first_name`, `last_name`, `school_email`, `passw
 
 select * from `user`;
 
+#Table structure for table `email_database`
+DROP TABLE IF EXISTS `email_database`;
+CREATE TABLE IF NOT EXISTS `email_database` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender_name` varchar(255) NOT NULL,
+  `sender_email` varchar(255) NOT NULL,
+  `subject` varchar(255) ,
+  `body` text NOT NULL,
+  `check_policy` boolean not null default 0,
+  `email_sent_on` datetime NOT NULL,
+PRIMARY KEY (`id`)
+);
