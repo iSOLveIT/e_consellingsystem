@@ -1,0 +1,91 @@
+{% extends 'layout.html' %}
+
+{% block title %} <title>Dashboard</title> {% endblock %}
+
+
+{% include 'includes/_sessionnavbar.html' %}
+{% block content %}
+  
+  <div class="hero-wrap hero-wrap-2" style="margin-bottom: 10px;">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row no-gutters slider-text align-items-center justify-content-center">
+        <div class="col-md-9 ftco-animate text-center">
+          <h1 class="mb-2 bread" style="text-shadow: 2px 2px 7px #000000;">Dashboard</h1>
+          <p class="breadcrumbs" style="text-shadow: 2px 2px 7px #000000;"><span class="mr-2"><a href="#">Home
+                &rightarrow; </a></span> <span style="color: #cccccc;">Dashboard</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dept_head" style="background-color: #fff;  height: max-content;  ">
+    <div class="container">
+      <div class="row dept_sub">
+        <div class="col-lg-5 mr-auto"
+          style="background-color: #000033; padding-top: 10px;padding-bottom: 10px; height: max-content;">
+          <h1 style="font-size: 65pt;">Hi {{ session.username['fname'] }}!</h1>
+          <p class="mb-5" style="font-size:17pt;">
+            Welcome to the Counselling Unit, We're super excited to have you on board.
+          </p>
+        </div>
+        <div class="col" style="padding: 10px 30px;">
+
+          <div class="card-header" style="border: none; margin-bottom: 5px;">
+            <h2 class="section-title mb-3" style="padding-top: 50px; padding-bottom: 30px; text-align: center;">Book Appointment</h2>
+          </div>
+          <form action="" method="POST" class='contact_form' data-aos="fade" style="padding-bottom: 60px; ">
+              
+            <div class="form-group row">
+              <div class="col-md-12 mb-3 mb-lg-0">
+                {% include 'includes/_message.html'%}
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <div class="col-md-12">
+                <label for="selectInput" style="font-size: large; font-weight: bold;">Type of Issue</label>
+                <select class="form-control" name="issue"
+                  style="border-radius: 1.66em; box-sizing: border-box; height: 60px;" id="selectInput" required>
+                  <option value="Academic/Career">Academic/Career</option>
+                  <option value="Personal-Social">Personal/Social</option>
+                  <option value="Financial">Financial</option>
+                  <option value="Health">Health</option>
+                  <option value="Others">Others</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="dateInput" style="font-size: large; font-weight: bold;">Appointment Date</label>
+                <input type="date" class="form-control" name="inputDate" min="2019-11-26" step="2"
+                  style="border-radius: 1.66em; box-sizing: border-box; height: 60px;" id="dateInput" required>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="timeInput" style="font-size: large; font-weight: bold;">Appointment Time</label>
+                <input type="time" class="form-control" name="inputTime" min="07:00" max="21:00" step="7200" 
+                  style="border-radius: 1.66em; box-sizing: border-box; height: 60px;" id="timeInput" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <small id="emailHelp" class="form-text text-muted">We work from Mondays to Fridays and opening hours are
+                from 7:00AM-9:00PM.</small>
+            </div>
+            <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox"  name="terms" id="gridCheck" value="1" required>
+                <label class="form-check-label" for="gridCheck">
+                  I agree that my submitted data is being collected and stored
+                </label>
+              </div>
+            </div>
+            <button type="submit" class="btn  py-3 px-5"
+              style="color:#ffffff;border-radius: 1.66em; padding: 1em 1em;background-color: #000033;">Book
+              Appointment</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

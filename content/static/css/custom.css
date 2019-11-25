@@ -13,7 +13,7 @@ html,body
 
 /*Navbar & Navbar-brand shrink*/
 nav.navbar{
-    background-color:#fdf3e9;
+    background-color:#fff;
     padding: 50px 50px; 
     
     position: sticky;
@@ -106,7 +106,8 @@ img.navbar_img{
 
 /*dept head*/
 .dept_head{
-  background: #fdf3e9;
+  background: #f18900;
+  color:#fff;
   height: 550px;
   padding: 0 100px;
 }
@@ -204,12 +205,12 @@ img.navbar_img{
   border-radius: 50%;
   background-color: #e6e6e6; }
 .nonloop-block-14 .owl-dots .owl-dot.active span {
-  background-color: #72b5ca;; }
+  background-color: #000033;; }
 /*end help carousel*/   
 
 /*testimonial section*/
 .testimonial_head{
-  background: #e2f0f4;
+  background: #bfbff7;
   height: max-content;
   margin-top: 50px;
   text-align: center;
@@ -255,7 +256,7 @@ img.navbar_img{
   border-radius: 50%;
   background-color: #e6e6e6; }
 .nonloop-block-13 .owl-dots .owl-dot.active span {
-  background-color: #72b5ca;; }
+  background-color: #000033;; }
 
 
 /*Daily Messages */
@@ -292,7 +293,7 @@ img.navbar_img{
 .footer_head{
   height:500px;
   text-align: center;
-  background-color: #fdf3e9;
+  background-color: #fff;
 }
 .footer_content{
   margin: auto;
@@ -302,14 +303,14 @@ img.navbar_img{
 .footer_img{
   width:inherit;
 }
-.detail{
+.detail{  
   padding: 30px 0;
 }
 
 .designer{
   text-align: center;
   height: 80px;
-  background: #343a40;
+  background: #000033;
 }
 .design_sub{
   padding-top: 30px;
@@ -320,7 +321,7 @@ img.navbar_img{
     width: inherit;
     height:500px;
     text-align: center;
-    background-color: #fdf3e9;
+    background-color: #fff;
     
   }
   .footer_content{
@@ -340,7 +341,7 @@ img.navbar_img{
     text-align: center;
     width: inherit;
     height: 80px;
-    background: #343a40;
+    background: #000033;
   }
   .design_sub{
     padding-top: 10px;
@@ -487,7 +488,7 @@ img.navbar_img{
 
 /*staff head*/
 .staff_head{
-  background: #e2f0f4;
+  background: #bfbff7;
   height: max-content;
   padding: 50px 100px;
 }
@@ -511,7 +512,7 @@ img.navbar_img{
 
 /*contact*/
 .contact_head{
-  background: #fdf3e9;
+  background: #fff;
   height: max-content;
   padding: 50px 200px;
   text-align: center;

@@ -1,0 +1,89 @@
+{% extends 'layout.html' %}
+
+{% block title %} <title>Bookings</title> {% endblock %}
+
+{% include 'includes/_sessionnavbar.html' %}
+{% block content %}
+
+
+<div class="hero-wrap hero-wrap-2" style="margin-bottom: 10px;">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row no-gutters slider-text align-items-center justify-content-center">
+      <div class="col-md-9 ftco-animate text-center">
+        <h1 class="mb-2 bread" style="text-shadow: 2px 2px 7px #000000;">Appointment Reserved</h1>
+        <p class="breadcrumbs" style="text-shadow: 2px 2px 7px #000000;"><span class="mr-2"><a href="#">Home
+              &rightarrow; </a></span> <span style="color: #cccccc;">Appointment Reserved</span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Bookings-->
+<div class="dept_head"
+  style="background-color: #e2f0f4; padding-top: 30px; padding-bottom: 30px;height: max-content;">
+  <h3 style="color: #0a66a3;">Here is the list of Booked Appointment</h3>
+  <br>
+  <div class="container">
+      <div class="row">
+          <div class="col-md-6 mb-3 mb-lg-0">
+            {% include 'includes/_message.html'%}
+          </div>
+        </div>
+      <div class="row head_sub" style="padding-bottom: 20px;">
+          {% for book in appointment %}
+            <div class="col-6" style="padding-bottom: 30px;">
+              <div class="card reserve">
+                <div class="card-body card-header">
+                  <h5 class="card-title">Appointment</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><b>Appointment Tag:</b> <span class="reserve_item"
+                      style="margin-left:8.7rem;">{{ book.appointment_tag }}</span>
+                  </li>
+                  <li class="list-group-item"><b>Date:</b> <span class="reserve_item" style="margin-left:15rem;">{{ book.appointDate_Time.strftime('%B %d, %Y') }}
+                      </span></li>
+                  <li class="list-group-item"><b>Time:</b> <span class="reserve_item"
+                      style="margin-left:15rem;">{{ book.appointDate_Time.strftime('%H:%M %p') }}</span></li>
+                  <li class="list-group-item"><b>Type of Appointment:</b> <span class="reserve_item"
+                      style="margin-left:7rem;">{{ book.problem }}</span></li>
+                      {% if ( book.assigned == True ) %}
+                        <li class="list-group-item"><b>Appointment Status:</b> <span class="reserve_item"
+                          style="margin-left:7.7rem;">Assigned</span>
+                        </li>
+                      {% else %}
+                        <li class="list-group-item"><b>Appointment Status:</b> <span class="reserve_item"
+                          style="margin-left:7.7rem;">Unassigned</span>
+                        </li>
+                      {% endif %}
+                </ul>
+                {% if (book.assigned == True) %}
+                  <div class="card-body">
+                    <table class="table" >
+                      <tr >
+                        <td style="border:none;"><a href="#" class="card-link btn btn-danger disabled" role="button" aria-disabled="true">&times; CANCEL</a></td>
+                        <td style="border:none;"><a href="#" class="card-link btn btn-success disabled" role="button" aria-disabled="true">&#9998; MODIFY</a></td>
+                      </tr>
+                    </table>
+                  </div>
+                {% else %}
+                  <div class="card-body">
+                    <table class="table" >
+                      <tr>
+                          <td style="border:none;"><a href="/cancel?aptag={{book.appointment_tag}}" class="card-link btn btn-danger" >&times; CANCEL</a></td>
+                          <td style="border:none;"><a href="/edit?aptag={{book.appointment_tag}}" class="card-link btn btn-success">&#9998; MODIFY</a></td>
+                        </tr>
+                    </table>
+                    
+                  </div>
+                {% endif %}
+                
+              </div>
+            </div>
+          {% endfor %}
+      </div>
+      {{ msg }}
+  </div>
+</div>
+
+{% endblock %}
