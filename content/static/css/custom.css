@@ -582,7 +582,11 @@ img.navbar_img{
     text-align: left;
   }
 }
-
+.alert-issue{
+  color: #000033;
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+}
 /*CSS for correction*/
 /* *{
   background: #000 !important;
