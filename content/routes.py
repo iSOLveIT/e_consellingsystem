@@ -177,7 +177,7 @@ def booking():
     return render_template('appointment_reserved.html')
 
 
-# Edit Article
+# Edit Appointment
 @app.route('/appointment_reserved/edit', methods=['GET', 'POST'])
 @login_required
 def edit():
@@ -205,7 +205,7 @@ def edit():
         return redirect(url_for('booking'))
     return render_template("edit_appointment.html")
 
-# Delete Article
+# Cancel Appointment
 @app.route('/appointment_reserved/cancel', methods=['GET'])
 @login_required
 def cancel():
@@ -253,16 +253,16 @@ def request_email():
         inputEmail = request.form['email']
         # Check if Email exist in user table
         cur = mysql.connection.cursor()
-        query = "SELECT * FROM user WHERE school_email=%(sch_mail)s"
-        result = cur.execute(query, {'sch_mail':inputEmail})
+        query = "SELECT * FROM user WHERE (school_email=%(user_mail)s) OR (optional_email=%(user_mail)s)"
+        result = cur.execute(query, {'user_mail':inputEmail})
         if result > 0:
             data = cur.fetchone()
             user_id = data['user_id']
-            user_email = data['school_email']
+            user_email = inputEmail
             user_fname = data['first_name']
             reset_password_link(user=user_id, email=user_email, username=user_fname)
             flash('Instructions to reset your password has been sent to your email.', 'info')
-            return redirect(url_for('login'))
+            return render_template('request_email.html') 
         else:
             flash('There is no account with this email. Please check if email is entered correctly.','danger')
             return render_template('request_email.html') 
