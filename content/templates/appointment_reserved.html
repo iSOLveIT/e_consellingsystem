@@ -29,7 +29,7 @@
           <div class="col-md-6 mb-3 mb-lg-0">
             {% include 'includes/_message.html'%}
           </div>
-        </div>
+      </div>
       <div class="row head_sub" style="padding-bottom: 20px;">
           {% for book in appointment %}
             <div class="col-6" style="padding-bottom: 30px;">
@@ -44,7 +44,7 @@
                   <li class="list-group-item"><b>Date:</b> <span class="reserve_item" style="margin-left:15rem;">{{ book.appointDate_Time.strftime('%B %d, %Y') }}
                       </span></li>
                   <li class="list-group-item"><b>Time:</b> <span class="reserve_item"
-                      style="margin-left:15rem;">{{ book.appointDate_Time.strftime('%H:%M %p') }}</span></li>
+                      style="margin-left:15rem;">{{ book.appointDate_Time.strftime('%I:%M %p') }}</span></li>
                   <li class="list-group-item"><b>Type of Appointment:</b> <span class="reserve_item"
                       style="margin-left:7rem;">{{ book.problem }}</span></li>
                       {% if ( book.assigned == True ) %}

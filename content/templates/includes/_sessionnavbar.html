@@ -58,7 +58,7 @@
               <div class="row">
                 <div class="col-8" style="text-align: right; line-height: 4px; color:#000;">
                   <p><b>{{ session.username['lname'] }}</b></p>
-                  <a href="./edit_profile.html" style="color:#000033">edit profile</a>
+                  <a href="/settings/edit_profile" style="color:#000033">edit profile</a>
                 </div>
                 <div class="col-4" style="position: relative; top: -17px;">
                   <img src="{{ url_for('static', filename='avatar.png') }}" alt="" width="45px" height="45px"
@@ -66,7 +66,7 @@
                 </div>
               </div>
             </div>
-            <a class="nav-link edit_profile" href="./edit_profile.html" style="text-transform: uppercase;">My Account</a>
+            <a class="nav-link edit_profile" href="/settings/edit_profile" style="text-transform: uppercase;">My Account</a>
           </li>
 
         </ul>

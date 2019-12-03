@@ -23,105 +23,113 @@
     <div class="container">
         <div>
             <div>
-                <form action="" method="GET" class="profile">
-
-                    <h4 style="color: #000033;" class="text-uppercase">Personal Information</h4>
-                    <hr>
-
-                    <div class="form-row">
-                        <div class="form-group col-md-4">
-                            <label for="inputLName">Last Name</label>
-                            <input type="text" class="form-control" id="inputLName" placeholder="e.g.Kent"
-                                maxlength="255" required>
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for="inputFName">First Name</label>
-                            <input type="text" class="form-control" id="inputFName" placeholder="e.g.Brad"
-                                maxlength="255" required>
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for="inputDOB">Date of Birth</label>
-                            <input type="date" class="form-control" id="inputDOB" required>
+                <form action="" method="POST" class="profile">
+                    <div class="row">
+                        <div class="col-md-6 mb-3 mb-lg-0">
+                            {% include 'includes/_message.html'%}
                         </div>
                     </div>
+                        <h4 style="color: #000033;" class="text-uppercase">Personal Information</h4>
+                        <hr>
 
-                    <div class="form-row">
-                        <div class="form-group col-md-4">
-                            <label for="inputEmail4">Student Email</label>
-                            <input type="email" class="form-control" id="inputEmail4"
-                                placeholder="e.g.10087872@upsamail.edu.gh" maxlength="255">
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="inputLName">Last Name</label>
+                                <input type="text" name="edit_lname" class="form-control" id="inputLName" value="{{ session.username['lname'] }}"
+                                    maxlength="255" required>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="inputFName">First Name</label>
+                                <input type="text" name="edit_fname" class="form-control" id="inputFName" value="{{ session.username['fname'] }}"
+                                    maxlength="255" required>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="inputDOB">Date of Birth</label>
+                                <input type="date" name="edit_dob" class="form-control" id="inputDOB" value="{{ item.dob }}" required>
+                            </div>
                         </div>
-                        <div class="form-group col-md-4">
-                            <label for="inputEmail5">Optional Email</label>
-                            <input type="email" class="form-control" id="inputEmail5" placeholder="example@gmail.com"
+
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="inputEmail4">Student Email</label>
+                                <input type="email" name="edit_schmail" class="form-control" id="inputEmail4"
+                                    value="{{ item.stud_email }}" maxlength="255">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="inputEmail5">Optional Email</label>
+                                <input type="email" name="edit_optmail" class="form-control" id="inputEmail5" value="{{ item.opt_email }}"
+                                    maxlength="255">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="inputLevel">Level</label>
+                                <input type="number" name="edit_level" class="form-control" id="inputLevel" value="{{ item.level }}"
+                                    maxlength="3" minlength="3" min="100" max="400" step="100" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="inputGender">Gender</label>
+                                {% if (item.gender == 'F') %}
+                                    <select id="inputGender" name="edit_gender" class="form-control" required>
+                                        <option  value="M">Male</option>
+                                        <option selected value="F">Female</option>
+                                    </select>
+                                {% elif (item.gender == 'M') %}
+                                    <select id="inputGender" name="edit_gender" class="form-control" required>
+                                        <option selected value="M">Male</option>
+                                        <option value="F">Female</option>
+                                    </select>
+                                {% endif %}
+                                
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="inputPhone">Phone Number</label>
+                                <input type="text" name="edit_phone" class="form-control" id="inputPhone" value="{{ item.phone }}"
+                                    maxlength="10" minlength="10">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="inputAct">Account Created On</label>
+                                <input type="text" class="form-control" id="inputAct" value="{{ item.act_creation }}" readonly disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputProg">Programme of Study</label>
+                            <input type="text" name="edit_prog" class="form-control" id="inputProg"
+                                value="{{ item.prog }}" maxlength="255">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputFaculty">Faculty</label>
+                            <input type="text" name="edit_faculty" class="form-control" id="inputFaculty"
+                                value="{{ item.faculty }}"
                                 maxlength="255">
                         </div>
-                        <div class="form-group col-md-4">
-                            <label for="inputLevel">Level</label>
-                            <input type="number" class="form-control" id="inputLevel" placeholder="e.g.100"
-                                maxlength="3" minlength="3" min="100" max="400" step="100" required>
-                        </div>
-                    </div>
+                        <br><br>
 
-                    <div class="form-row">
-                        <div class="form-group col-md-4">
-                            <label for="inputGender">Gender</label>
-                            <select id="inputGender" class="form-control" required>
-                                <option selected value="M">Male</option>
-                                <option value="F">Female</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for="inputPhone">Phone Number</label>
-                            <input type="text" class="form-control" id="inputPhone" placeholder="e.g.0554779365"
-                                maxlength="10" minlength="10">
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for="inputAct">Account Created On</label>
-                            <input type="date" class="form-control" id="inputAct" value="" readonly disabled>
-                        </div>
-                    </div>
+                        <h4 style="color: #000033;" class="text-uppercase">Data Information</h4>
+                        <hr>
 
-                    <div class="form-group">
-                        <label for="inputProg">Programme of Study</label>
-                        <input type="text" class="form-control" id="inputProg"
-                            placeholder="e.g.BSc. Information Technology Management" maxlength="255">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputFaculty">Faculty</label>
-                        <input type="text" class="form-control" id="inputFaculty"
-                            placeholder="e.g.Faculty of Information Technology and Communication Studies"
-                            maxlength="255">
-                    </div>
-                    <br><br>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="inputID">Student ID</label>
+                                <input type="numeric" class="form-control" id="inputID" value="{{ session['user_id'] }}"
+                                    maxlength="10" minlength="10" readonly disabled>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="inputPassword">Password</label>
+                                <input type="password" class="form-control" id="inputPassword" value="password"
+                                    minlength="8" readonly disabled>
+                                <small class="text-muted">&bullet; Click here to <a href="/setting/change_password">change password</a></small>
+                            </div>
+                        </div>
 
-                    <h4 style="color: #000033;" class="text-uppercase">Data Information</h4>
-                    <hr>
-
-                    <div class="form-row">
-                        <div class="form-group col-md-4">
-                            <label for="inputID">Student ID</label>
-                            <input type="numeric" class="form-control" id="inputID" placeholder="10087872"
-                                maxlength="10" minlength="10" readonly disabled required>
+                        <div class="form-group">
+                            <div class="col-md-6" style="padding-top:5px;">
+                                <input type="submit" class="btn " value="Save Changes"
+                                    style="color:#ffffff;border-radius: 1.66em; padding: 1em 1em;background-color: #000033;">
+                            </div>
                         </div>
-                        <div class="form-group col-md-4">
-                            <label for="inputPassword">Password</label>
-                            <input type="password" class="form-control" id="inputPassword" placeholder="Enter Password"
-                                maxlength="255" minlength="8">
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for="inputConfirmPassword">Confirm Password</label>
-                            <input type="password" class="form-control" id="inputConfirmPassword"
-                                placeholder="Confirm Password" maxlength="255" minlength="8">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-md-6" style="padding-top:5px;">
-                            <input type="submit" class="btn " value="Save Changes"
-                                style="color:#ffffff;border-radius: 1.66em; padding: 1em 1em;background-color: #000033;">
-                        </div>
-                    </div>
                 </form>
             </div>
         </div>

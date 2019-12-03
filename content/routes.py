@@ -4,11 +4,14 @@ from .appoint_tag_gen import randomDigits
 from .contact import sendEmail, replyMessage, reset_password_link
 from .form import ChangepswdForm
 from .token import TokenGEN
+from .views import ProfileEndpoint
+
 
 # Third party imports
 from flask import render_template, request, redirect, url_for, flash, session, Markup
 from passlib.hash import sha256_crypt  # Encrypts password
 from functools import wraps
+
 
 # Standard library import
 import os
@@ -295,5 +298,5 @@ def password_reset():
     return render_template('change_password.html', form=form)
 
 
-
 # Route for editing user profile
+app.add_url_rule("/settings/edit_profile", view_func=ProfileEndpoint.as_view("edit_profile"))
