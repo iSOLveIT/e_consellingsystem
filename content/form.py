@@ -1,6 +1,5 @@
 # Local application imports
 
-
 # Third party imports
 from flask_wtf import FlaskForm
 from wtforms import PasswordField, validators
