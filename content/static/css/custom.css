@@ -79,6 +79,9 @@ img.navbar_img{
   .dash_brand{
     padding-right:150px;
   }  
+  .username{
+    font-size: 65pt;
+  }
 }
 
 /*service head*/
@@ -210,7 +213,7 @@ img.navbar_img{
 
 /*testimonial section*/
 .testimonial_head{
-  background: #bfbff7;
+  background: #e2f0f4;
   height: max-content;
   margin-top: 50px;
   text-align: center;
@@ -581,7 +584,11 @@ img.navbar_img{
   .profile{
     text-align: left;
   }
+  .username{
+    font-size: 40pt;
+  }
 }
+
 .alert-issue{
   color: #000033;
   background-color: #fff3cd;

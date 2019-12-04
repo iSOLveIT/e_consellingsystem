@@ -83,6 +83,8 @@ def contact():
 @app.route('/login', methods=['GET', 'POST'])
 @not_logged_in
 def login():
+    # Session
+    session.permanent = True
     if request.method == "POST":
         # Get Login details
         user_id = request.form['idnumber']

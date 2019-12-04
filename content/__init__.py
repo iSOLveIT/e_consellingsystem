@@ -1,5 +1,6 @@
 # Standard library imports
 import os
+from datetime import timedelta as td
 
 # Third party imports
 from flask import Flask
@@ -15,6 +16,7 @@ load_dotenv(dotenv_path=env_path)
 
 # Instantiate Flask
 app = Flask(__name__)
+
 
 
 # Config Mail
@@ -38,6 +40,10 @@ app.config['MYSQL_DB'] = 'sql2314281'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 
 mysql = MySQL(app)
+
+# Config Session
+app.session_cookie_name = 'marlins'
+app.permanent_session_lifetime =  td(minutes=1440)
 
 # Local application imports
 from content import routes
