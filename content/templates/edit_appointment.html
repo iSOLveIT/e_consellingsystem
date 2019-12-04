@@ -1,0 +1,76 @@
+{% extends 'layout.html' %}
+
+{% block title %} <title>Edit Appointment</title> {% endblock %}
+
+{% block content %}
+{% include 'includes/_sessionnavbar.html' %}
+
+  
+<div class="hero-wrap hero-wrap-2" style="margin-bottom: 10px;">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+            <div class="col-md-9 ftco-animate text-center">
+                <h1 class="mb-2 bread" style="text-shadow: 2px 2px 7px #000000;">Modify Booked Appointment</h1>
+                <p class="breadcrumbs" style="text-shadow: 2px 2px 7px #000000;"><span class="mr-2"><a href="#">Home
+                            &rightarrow; </a></span> <span style="color: #cccccc;">Appointment Reserved &rightarrow;
+                        Modify Booked Appointment</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="dept_head" style="background-color: #e2f0f4; color:#000000; padding: 50px 0; height: max-content; ">
+    <div class="container">
+        <div>
+            <div>
+              <form action="" method="POST" class="profile">
+
+                <h4 style="color: #000033;" class="text-uppercase">Modify Booked Appointment</h4>
+                <hr>
+
+                
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputIssue">Type of Issue</label>
+                        <select id="inputIssue" class="form-control" name="issue" required>
+                            <option value="Academic/Career">Academic/Career</option>
+                            <option value="Personal-Social">Personal/Social</option>
+                            <option value="Financial">Financial</option>
+                            <option value="Health">Health</option>
+                            <option value="Others">Others</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="dateInput">Appointment Date</label>
+                        <input type="date" class="form-control" name="inputDate" id="dateInput" min="2019-11-26" step="2" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="timeInput" >Appointment Time</label>
+                        <input type="time" class="form-control" name="inputTime" id="timeInput" min="07:00" max="21:00" step="7200">
+                    </div>
+                </div>
+                <div class="form-group">
+                        <small id="emailHelp" class="form-text text-muted">We work from Mondays to Fridays and opening hours are
+                          from 7:00AM-9:00PM.</small>
+                      </div>
+
+
+                <div class="form-group">
+                    <div class="col-md-6" style="padding-top:5px;">
+                        <input type="submit" class="btn " value="Save Changes"
+                            style="color:#ffffff;border-radius: 1.66em; padding: 1em 1em;background-color: #000033;">
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+{% endblock %}

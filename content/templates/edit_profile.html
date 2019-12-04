@@ -1,0 +1,141 @@
+{% extends 'layout.html' %}
+
+{% block title %} <title>My Account</title> {% endblock %}
+
+{% block content %}
+{% include 'includes/_sessionnavbar.html' %}
+
+
+<div class="hero-wrap hero-wrap-2" style="margin-bottom: 10px;">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+            <div class="col-md-9 ftco-animate text-center">
+                <h1 class="mb-2 bread" style="text-shadow: 2px 2px 7px #000000;">My Account</h1>
+                <p class="breadcrumbs" style="text-shadow: 2px 2px 7px #000000;"><span class="mr-2"><a href="#">Home
+                            &rightarrow; </a></span> <span style="color: #cccccc;">My Account</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="dept_head" style="background-color: #e2f0f4; color:#000000; padding: 50px 0; height: max-content; ">
+    <div class="container">
+        <div>
+            <div>
+                <form action="" method="POST" class="profile">
+                    <div class="row">
+                        <div class="col-md-6 mb-3 mb-lg-0">
+                            {% include 'includes/_message.html'%}
+                        </div>
+                    </div>
+                        <h4 style="color: #000033;" class="text-uppercase">Personal Information</h4>
+                        <hr>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="inputLName">Last Name</label>
+                                <input type="text" name="edit_lname" class="form-control" id="inputLName" value="{{ session.username['lname'] }}"
+                                    maxlength="255" required>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="inputFName">First Name</label>
+                                <input type="text" name="edit_fname" class="form-control" id="inputFName" value="{{ session.username['fname'] }}"
+                                    maxlength="255" required>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="inputDOB">Date of Birth</label>
+                                <input type="date" name="edit_dob" class="form-control" id="inputDOB" value="{{ item.dob }}" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="inputEmail4">Student Email</label>
+                                <input type="email" name="edit_schmail" class="form-control" id="inputEmail4"
+                                    value="{{ item.stud_email }}" maxlength="255">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="inputEmail5">Optional Email</label>
+                                <input type="email" name="edit_optmail" class="form-control" id="inputEmail5" value="{{ item.opt_email }}"
+                                    maxlength="255">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="inputLevel">Level</label>
+                                <input type="number" name="edit_level" class="form-control" id="inputLevel" value="{{ item.level }}"
+                                    maxlength="3" minlength="3" min="100" max="400" step="100" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="inputGender">Gender</label>
+                                {% if (item.gender == 'F') %}
+                                    <select id="inputGender" name="edit_gender" class="form-control" required>
+                                        <option  value="M">Male</option>
+                                        <option selected value="F">Female</option>
+                                    </select>
+                                {% elif (item.gender == 'M') %}
+                                    <select id="inputGender" name="edit_gender" class="form-control" required>
+                                        <option selected value="M">Male</option>
+                                        <option value="F">Female</option>
+                                    </select>
+                                {% endif %}
+                                
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="inputPhone">Phone Number</label>
+                                <input type="text" name="edit_phone" class="form-control" id="inputPhone" value="{{ item.phone }}"
+                                    maxlength="10" minlength="10">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="inputAct">Account Created On</label>
+                                <input type="text" class="form-control" id="inputAct" value="{{ item.act_creation }}" readonly disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputProg">Programme of Study</label>
+                            <input type="text" name="edit_prog" class="form-control" id="inputProg"
+                                value="{{ item.prog }}" maxlength="255">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputFaculty">Faculty</label>
+                            <input type="text" name="edit_faculty" class="form-control" id="inputFaculty"
+                                value="{{ item.faculty }}"
+                                maxlength="255">
+                        </div>
+                        <br><br>
+
+                        <h4 style="color: #000033;" class="text-uppercase">Data Information</h4>
+                        <hr>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="inputID">Student ID</label>
+                                <input type="numeric" class="form-control" id="inputID" value="{{ session['user_id'] }}"
+                                    maxlength="10" minlength="10" readonly disabled>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="inputPassword">Password</label>
+                                <input type="password" class="form-control" id="inputPassword" value="password"
+                                    minlength="8" readonly disabled>
+                                <small class="text-muted">&bullet; Click here to <a href="/setting/change_password">change password</a></small>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-6" style="padding-top:5px;">
+                                <input type="submit" class="btn " value="Save Changes"
+                                    style="color:#ffffff;border-radius: 1.66em; padding: 1em 1em;background-color: #000033;">
+                            </div>
+                        </div>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+{% endblock %}

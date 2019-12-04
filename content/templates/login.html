@@ -1,0 +1,72 @@
+{% extends 'layout.html' %}
+
+{% block title %} <title>Login</title> {% endblock %}
+
+{% block content %}
+{% include 'includes/_navbar.html' %}
+
+
+  <div class="hero-wrap hero-wrap-2" style="margin-bottom: 10px;">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row no-gutters slider-text align-items-center justify-content-center">
+        <div class="col-md-9 ftco-animate text-center">
+          <h1 class="mb-2 bread" style="text-shadow: 2px 2px 7px #000000;">Login Account</h1>
+          <p class="breadcrumbs" style="text-shadow: 2px 2px 7px #000000;"><span class="mr-2"><a href="/">Home
+                &rightarrow; </a></span> <span style="color: #cccccc;">Login</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="login_head" style="margin-bottom: 40px; height: max-content;"">
+    <div class=" container login_sub">
+
+    <div class="row justify-content-center">
+      <div class="col-md-7">
+        <div class="card-header" style="border: none; margin-bottom: 5px;">
+          <h2 class="section-title mb-3" style="padding-top: 80px; padding-bottom: 30px;">Login Credentials</h2>
+        </div>
+
+        <form action="" method="POST" class='login_form' data-aos="fade"
+          style="padding-bottom: 60px;">
+
+          <div class="form-group row">
+            <div class="col-md-12 mb-3 mb-lg-0">
+              {% include 'includes/_message.html'%}
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-md-12 mb-3 mb-lg-0">
+              <input type="text" class="form-control" name="idnumber"
+                style="border-radius: 1.66em; box-sizing: border-box; padding: 30px;" maxlength="10" placeholder="Enter ID Number"
+                required>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-md-12">
+              <input type="password" class="form-control" name="password"
+                style="border-radius: 1.66em; box-sizing: border-box; padding: 30px;" minlength="8" maxlength="255" placeholder="Enter Password"
+                required> <br>
+              <small id="passwordHelpInline" class="text-muted" >
+                <a href="/request_email">Forgot Password?</a>
+              </small>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-md-6" style="padding-top:5px;">
+              <input type="submit" class="btn  py-3 px-5" value="Sign in"
+                style="color:#ffffff;border-radius: 1.66em; padding: 1em 1em;background-color: #000033;">
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+
+{% endblock %}
+
