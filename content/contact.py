@@ -56,7 +56,7 @@ def reset_password_link(user, email, username):
     msg = Message(subj, sender=('COUNSELLING & GENDER UNIT', 'isolveitgroup@gmail.com'), recipients=[email_address])
     assert msg.sender == "COUNSELLING & GENDER UNIT <isolveitgroup@gmail.com>"
     
-    msg.body = "<h2 style='text-align: center;'>Password Reset Instructions</h2> <br> <br> A password reset event have been requested by you on %s (GMT). <br><br> Please note that the password reset window is limited to one hour. If you do not reset your password within one hour, you will need to submit a new request. <br><br> To complete the password reset process, visit the following link: <br> <a href='http://127.0.0.1:4000/reset_password?token=%s'>Click here to reset password</a> <br><br> <b>Don't recognize this activity?</b> <br> Ignore this email and no changes will be made to your account.<br><br> The Counselling and Gender Unit" %(Edate.strftime('%A, %B %d, %Y %I:%M %p'), token)
+    msg.body = "<h2 style='text-align: center;'>Password Reset Instructions</h2> <br> <br> A password reset event have been requested by you on %s (GMT). <br><br> Please note that the password reset window is limited to one hour. If you do not reset your password within one hour, you will need to submit a new request. <br><br> To complete the password reset process, visit the following link: <br> <a href='https://ecounselling-upsa-478a1a.netlify.com/reset_password?token=%s'>Click here to reset password</a> <br><br> <b>Don't recognize this activity?</b> <br> Ignore this email and no changes will be made to your account.<br><br> The Counselling and Gender Unit" %(Edate.strftime('%A, %B %d, %Y %I:%M %p'), token)
     msg.html = msg.body
     
     mail.send(msg)

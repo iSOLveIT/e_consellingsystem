@@ -31,10 +31,10 @@ mail = Mail(app)
 
 
 # Config MySQL
-app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_HOST'] = str(os.getenv('MYSQL_HOST'))
 app.config['MYSQL_USER'] = str(os.getenv('MYSQL_USER'))
 app.config['MYSQL_PASSWORD'] = str(os.getenv('MYSQL_PASSWORD'))
-app.config['MYSQL_DB'] = 'app'
+app.config['MYSQL_DB'] = 'sql2314281'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 
 mysql = MySQL(app)

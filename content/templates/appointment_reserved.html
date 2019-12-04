@@ -47,7 +47,7 @@
                       style="margin-left:15rem;">{{ book.appointDate_Time.strftime('%I:%M %p') }}</span></li>
                   <li class="list-group-item"><b>Type of Appointment:</b> <span class="reserve_item"
                       style="margin-left:7rem;">{{ book.problem }}</span></li>
-                      {% if ( book.assigned == True ) %}
+                      {% if book.assigned == True %}
                         <li class="list-group-item"><b>Appointment Status:</b> <span class="reserve_item"
                           style="margin-left:7.7rem;">Assigned</span>
                         </li>
@@ -57,7 +57,7 @@
                         </li>
                       {% endif %}
                 </ul>
-                {% if (book.assigned == True) %}
+                {% if book.assigned == True %}
                   <div class="card-body">
                     <table class="table" >
                       <tr >
